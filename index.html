@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>            
+        <div id='container'></div>
+        <button class='add-book-button'>Add Book</button>
+        <div id='popup' class='hide'>
+            <form class='add-book-form'> 
+                <!-- <p class='add-book-title'>Add Book</p> -->
+                <div>
+                    <label class='input-field-label'>Title</label><br>
+                    <input type="text" value='Book Title'>    
+                </div>
+                <div>
+                    <label class='input-field-label'>Author</label><br>
+                    <input type="text" value='Author Name'>
+                </div>
+                <div>
+                    <label class='input-field-label'>Pages</label><br>
+                    <input type="text" value='Number of Pages'>
+                </div>
+                <div class='read-checkbox-field'>
+                    <label class='input-field-label'>Have you read it yet?</label><br>
+                    <div class='checkboxes'>    
+                        <div>
+                            <label>Yes!</label>
+                            <input type="checkbox">    
+                        </div>   
+                        <div>
+                            <label>Nope!</label>  
+                            <input type='checkbox'>
+                        </div>                             
+                    </div>
+                    <div class='submit-button-box'>
+                        <button class='submit-button'>Submit</button>
+                    </div>                    
+                </div>
+            </div>
+        </form>
+    <script src='index.js'></script>        
+    </body>
+</html>
