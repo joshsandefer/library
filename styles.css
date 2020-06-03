@@ -17,6 +17,10 @@ h1 {
     text-align: center;
 }
 
+#popup {
+    background-color: white;
+}
+
 #add-book {
     width: 500px;
     /* display: flex;
