@@ -1,13 +1,4 @@
-let myLibrary = [["Book 1", "Author", "295", "Read"], ["Book 2", "Author", "295", "Read"], ["Book 3", "Author", "295", "Read"],["Book 1", "Author", "295", "Read"], ["Book 2", "Author", "295", "Read"], ["Book 3", "Author", "295", "Read"]];
-
-function Book() {
-    //constructor
-};
-
-function addBookToLibrary() {
-
-};
-
+let myLibrary = [["Book 1", "Author", "295", "Read"], ["Book 2", "Author", "295", "Read"], ["Book 3", "Author", "295", "Read"]];
 
 //Add book popup
 const addBookButton = document.querySelector(['.add-book-button']);
@@ -18,8 +9,9 @@ addBookButton.addEventListener('click', () => {
 
 //Creating the cards
 const container = document.querySelector('#container');
-myLibrary.forEach(render);
-function render(currentValue, index) {
+myLibrary.forEach(buildACard);
+
+function buildACard(currentValue, index) {
     let card = container.appendChild(document.createElement('div'));
     card.id = index;
     card.className = "book";
@@ -50,10 +42,30 @@ function render(currentValue, index) {
     del.innerHTML = 'Delete';
     del.className = 'del';
     del.addEventListener('click', () => {
-        delete myLibrary[index];
+        myLibrary.splice(index, 1);
+        console.log(index);
         card.remove();
     })
 
     console.log('were in')
 };
 
+//pull new book form
+const newBookSubmit = document.querySelector(['#new-book-submit']);
+newBookSubmit.addEventListener('click', () => {
+    let bookTitle = document.querySelector(['#book-title']).value;
+    let authorName = document.querySelector(['#author-name']).value;
+    let numberOfPages = document.querySelector(['#number-of-pages']).value;
+    let readStatus = document.querySelector(['input[name="read"]:checked']).value;
+
+    console.log(readStatus);
+    let array = addNewBook(bookTitle, authorName, numberOfPages, readStatus);
+    buildACard(array, array.length - 1);
+});
+ 
+function addNewBook(title, author, numberOfPages, readStatus) {
+    let array = [title, author, numberOfPages, readStatus];
+    myLibrary.push(array);
+    console.log(myLibrary);
+    return array;
+};

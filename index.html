@@ -2,7 +2,12 @@
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>            
+    <body>
+        <header>
+            <div>
+                <h1>My Library</h1>
+            </div>
+        </header>            
         <div id='container'></div>
         <button class='add-book-button'>Add Book</button>
         <div id='popup' class='hide'>
@@ -10,30 +15,31 @@
                 <!-- <p class='add-book-title'>Add Book</p> -->
                 <div>
                     <label class='input-field-label'>Title</label><br>
-                    <input type="text" value='Book Title'>    
+                    <input id='book-title' type="text" value='Book Title'>    
                 </div>
                 <div>
                     <label class='input-field-label'>Author</label><br>
-                    <input type="text" value='Author Name'>
+                    <input id ='author-name' type="text" value='Author Name'>
                 </div>
                 <div>
                     <label class='input-field-label'>Pages</label><br>
-                    <input type="text" value='Number of Pages'>
+                    <input id='number-of-pages' type="text" value='Number of Pages'>
                 </div>
                 <div class='read-checkbox-field'>
                     <label class='input-field-label'>Have you read it yet?</label><br>
                     <div class='checkboxes'>    
                         <div>
                             <label>Yes!</label>
-                            <input type="checkbox">    
+                            <input id='yes-checkbox' type="radio" name='read' value='Read'>    
+                            <label>Nope!</label>  
+                            <input type='radio' name='read' value='Unread' checked>                            
                         </div>   
                         <div>
-                            <label>Nope!</label>  
-                            <input type='checkbox'>
+
                         </div>                             
                     </div>
                     <div class='submit-button-box'>
-                        <button class='submit-button'>Submit</button>
+                        <button type='button' id= 'new-book-submit' class='submit-button'>Submit</button>
                     </div>                    
                 </div>
             </div>
