@@ -17,10 +17,6 @@ h1 {
     text-align: center;
 }
 
-#popup {
-    background-color: white;
-}
-
 #add-book {
     width: 500px;
     /* display: flex;
@@ -113,6 +109,7 @@ p {
     border-style: outset;
     border-color: rgba(44, 54, 63, 0.192);
     border-radius: 10px;
+    background-color: white;
     
     padding: 20px 20px 20px 20px;
 }
